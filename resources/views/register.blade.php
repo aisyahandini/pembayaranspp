@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
+    <!-- Favicons -->
+    <link href="{{ asset('assets/img/logo.png') }}" rel="icon">
+    <title>register</title>
     <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <style>
         body {
@@ -70,22 +72,27 @@
     <div class="card text-center">
         <div class="card-body">
             <img src="asset/img/logo.png" alt="SPP Payment" class="logo">
-            <h2 class="h5 mb-4">Sign in to your account</h2>
-            <form action="/login" method="POST">
+            <h2 class="h5 mb-4">register an account</h2>
+            <form action="{{ route('authenticate') }}" method="POST">
                 @csrf
                 <div class="mb-3">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Email address"
+                    <input type="Nama" class="form-control" name="name" id="Nama"
+                        placeholder="Masukan Nama Lengkap" required>
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="email"
                         required>
                 </div>
                 <div class="mb-3">
                     <input type="password" class="form-control" name="password" id="password" placeholder="Password"
                         required>
                 </div>
-                <button class="btn btn-primary w-100" type="submit">Log in</button>
+                <button class="btn btn-primary w-100" type="submit">simpan</button>
             </form>
             <div class="form-footer">
-                <p class="mt-3 mb-0">Don't have an account? <a href="/register">Sign up</a></p>
-                <!-- Link menuju halaman register -->
+                <p class="mt-3 mb-0">
+                    Log in to your account? <a href="/login-page">Log in</p>
+
             </div>
         </div>
     </div>
